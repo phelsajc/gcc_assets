@@ -6,22 +6,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
-   
+    
     <link rel="stylesheet" href="css/bootstrap.css" />
-
+    
+    <link rel="stylesheet" href="pages/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="pages/jqwidgets/styles/jqx.bootstrap.css" type="text/css" />
+    
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     
-    <link rel="stylesheet" href="pages/jqwidgets/styles/jqx.base.css" type="text/css" />
+    
     <script type="text/javascript" src="pages/scripts/jquery-1.11.1.min.js"></script>
-   
     <script type="text/javascript" src="pages/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="pages/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="pages/jqwidgets/jqxscrollbar.js"></script>
     <script type="text/javascript" src="pages/jqwidgets/jqxdata.js"></script>
     <script type="text/javascript" src="pages/jqwidgets/jqxlistbox.js"></script>
-  <script type="text/javascript" src="pages/jqwidgets/jqxdropdownlist.js"></script> 
-   <script type="text/javascript" src="pages/jqwidgets/jqxnotification.js"></script>
+    <script type="text/javascript" src="pages/jqwidgets/jqxdropdownlist.js"></script> 
+    <script type="text/javascript" src="pages/jqwidgets/jqxnotification.js"></script>
     <script type="text/javascript" src="pages/scripts/demos.js"></script> 
 <script type="text/javascript">
         $(document).ready(function () {  
@@ -60,29 +62,35 @@
 
 
   </head>
-  <body>   
 
 
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted">GC&amp;C</h3>
+<body>   
+
+  <div class="container">
+    
+    <div class="header">
+      <h3 class="text-muted">GC&amp;C</h3>
+    </div>
+    
+    <form class="form-signin" id="form"  method="post" action="pages/php/login.php">
+      <h2 class="form-signin-heading">Please Sign In</h2>
+      <div class="dropdown" name="list" id="dropdownlist"> </div>
+      <div>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="Remember Password"> Remember Password
+          </label>
+        </div>
+        <input class="btn btn-lg btn-primary btn-block" style="margin-top: 10px;" type="submit" value="LOGIN" id="sendButton" />
       </div>
-        
+    </form>
 
-      <form class="form" id="form"  method="post" action="pages/php/login.php" style="font-size: 13px; font-family: Verdana; width: 650px;">
-     <div name="list" id="dropdownlist">
+    <div class="footer">
+      <p><span class="glyphicon glyphicon-heart"></span></p>
     </div>
-     <div>
-    <input type="password" id="password" name="password" class="form-control"/>
-         <input style="margin-top: 10px;" type="submit" value="Submit" id="sendButton" />
-    </div>
-   </form>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span></p>
-      </div>
-
-    </div>
+  </div>
 
 
     <!-- build:js(.) scripts/vendor.js -->
