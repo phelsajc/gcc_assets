@@ -1947,7 +1947,7 @@ pre code {
     width: 25%;
   }
   .col-md-2 {
-    width: 16.66666667%;
+    width: 11%;
   }
   .col-md-1 {
     width: 8.33333333%;
@@ -2061,7 +2061,7 @@ pre code {
     margin-left: 25%;
   }
   .col-md-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 11%;
   }
   .col-md-offset-1 {
     margin-left: 8.33333333%;
@@ -2421,7 +2421,7 @@ table th[class*="col-"] {
 }
 .table-responsive {
   min-height: .01%;
-  overflow-x: auto;
+  /*overflow-x: auto;*/
 }
 @media screen and (max-width: 767px) {
   .table-responsive {

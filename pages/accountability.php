@@ -11,7 +11,7 @@
     <title>gcc_inv</title>
 
  <?php include("scripts/system_general_scripts.php"); ?>
-   <?php include("scripts/system_main_scripts.php"); ?>
+   <?php include("scripts/system_accounts_scripts.php"); ?>
    
 
   </head>
@@ -58,7 +58,7 @@
             <li><a href="">View Employees</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="accountability.php">Accountability</a></li>
+            <li><a href="">Add Company</a></li>
             <li><a href="">View Company</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -69,10 +69,10 @@
   <div style="  margin-top: 24px;">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h1 class="page-header">Employee</h1>
+          <h1 class="page-header">Accountability</h1>
           <div class="table-responsive">
 
-                <div class="test"><div id="jqxgrid">
+                <div class="test"><div id="jqAccount">
             </div></div>
 
 

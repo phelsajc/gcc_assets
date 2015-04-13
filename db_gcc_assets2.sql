@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2015 at 10:38 AM
+-- Generation Time: Apr 01, 2015 at 10:10 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -23,26 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
---
-
-CREATE TABLE IF NOT EXISTS `category` (
-`category_id` int(10) NOT NULL,
-  `category_name` varchar(30) DEFAULT NULL,
-  `category_description` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`category_id`, `category_name`, `category_description`) VALUES
-(1, 'Furniture', NULL),
-(2, 'Computers', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `company`
 --
 
@@ -50,15 +30,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 `company_id` int(255) NOT NULL,
   `company_name` varchar(50) DEFAULT NULL,
   `company_location` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `company`
---
-
-INSERT INTO `company` (`company_id`, `company_name`, `company_location`) VALUES
-(1, 'GC & C', 'Bata'),
-(2, 'Home World Construction', 'Bata');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -87,16 +59,24 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `username` varchar(30) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
   `employee_access_level` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`employee_id`, `employee_fname`, `employee_mname`, `employee_lname`, `employee_age`, `employee_dob`, `employee_gender`, `employee_id_number`, `employee_position`, `employee_house_num`, `employee_street`, `employee_subd`, `employee_block`, `employee_lot_num`, `employee_brgy`, `employee_country`, `employee_postal`, `username`, `password`, `employee_access_level`) VALUES
-(1, 'john carlo', 'coleongco', 'lucasan', '23', '07/13/1991', 'Male', '215', 'junior Programmer', NULL, 'paper street', 'arles', NULL, NULL, 'Alijis', 'Philippines', '6100', 'admin', 'admin', 'Super Administrator'),
-(3, 'roben', 'sds', 'ong', '', '01/01/1970', '', '', '', '', '', '', '', '', '', '', '', 'user', 'user', 'Super Administrator'),
-(5, 'nika', 'guillermo', 'lucasan', '23', '07/15/1992', 'Female', '222', 'medtech', '', '', '', '', '', 'Alijis', 'Philippines', '6100', 'adminnika', 'adminnika', 'Super Administrator');
+(2, 'roben', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'nika', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(4, 'shilea', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'rene', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 'mm', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'riza', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'brando', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'cmd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(10, 'gyd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(11, 'jc', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(12, 'mm', '', '', '', 'Fri Apr 03 2015 00:0', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -115,30 +95,13 @@ CREATE TABLE IF NOT EXISTS `items` (
   `company_id` int(255) NOT NULL,
   `item_remarks` varchar(50) DEFAULT NULL,
   `item_description` varchar(50) DEFAULT NULL,
-  `item_Image` blob,
-  `item_accountability` varchar(255) DEFAULT NULL,
-  `category_id` int(11) NOT NULL,
-  `item_price` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `items`
---
-
-INSERT INTO `items` (`item_id`, `item_name`, `item_serial`, `item_model`, `item_qty`, `item_dop`, `employee_id`, `company_id`, `item_remarks`, `item_description`, `item_Image`, `item_accountability`, `category_id`, `item_price`) VALUES
-(1, 'wew1', 'key123', 'razer', '1', '10/04/2015', 1, 1, 'good', 'keyboard only', '', '', 2, '1200'),
-(4, 'axs', '', '', '', '10/04/2015', 1, 2, '', '', '', '', 1, ''),
-(5, 'aa3', '', '', '', '10/04/2015', 1, 2, '', '', '', '', 1, '');
+  `item_Image` blob NOT NULL,
+  `item_accountability` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `category`
---
-ALTER TABLE `category`
- ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `company`
@@ -156,32 +119,27 @@ ALTER TABLE `employee`
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
- ADD PRIMARY KEY (`item_id`), ADD KEY `employee_id` (`employee_id`), ADD KEY `company_id` (`company_id`), ADD KEY `category_id` (`category_id`);
+ ADD PRIMARY KEY (`item_id`), ADD KEY `employee_id` (`employee_id`), ADD KEY `company_id` (`company_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-MODIFY `category_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-MODIFY `company_id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `company_id` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-MODIFY `employee_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `employee_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-MODIFY `item_id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `item_id` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -190,9 +148,7 @@ MODIFY `item_id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- Constraints for table `items`
 --
 ALTER TABLE `items`
-ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`company_id`),
-ADD CONSTRAINT `items_ibfk_2` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`),
-ADD CONSTRAINT `items_ibfk_3` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
+ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`company_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

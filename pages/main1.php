@@ -10,7 +10,8 @@
     <meta charset="utf-8">
     <title>gcc_inv</title>
 
- <?php include("scripts/system_general_scripts.php"); ?>
+
+   <?php include("scripts/system_general_scripts.php"); ?>
    <?php include("scripts/system_main_scripts.php"); ?>
    
 
@@ -51,14 +52,14 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#" data-toggle="modal" data-target="#myModal">Add Item</a></li>
-            <li><a href="main1.php">View Main1</a></li>
+            <li><a href="main.php">View Main</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="#" data-toggle="modal" data-target="#addEmployeeModal">Add Employee</a></li>
             <li><a href="">View Employees</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="accountability.php">Accountability</a></li>
+            <li><a href="">Add Company</a></li>
             <li><a href="">View Company</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -66,20 +67,23 @@
             <li><a href="">View Location</a></li>
           </ul>
         </div>
-  <div style="  margin-top: 24px;">
+          <div style="  margin-top: 50px;">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h1 class="page-header">Employee</h1>
+         <div class="item-grid"> 
+           <h1 class="page-header">Items</h1>
           <div class="table-responsive">
 
-                <div class="test"><div id="jqxgrid">
-            </div></div>
+       <?php include("items.php");?></div>
 
+              
 
           </div>
+       
 
         </div>
-</div>
+
+      </div>
       </div>
 
     </div>
